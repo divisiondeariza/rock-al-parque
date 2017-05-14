@@ -1,15 +1,12 @@
 <!-- <p>This is the partial for view 1.</p> -->
 <div class="container">
-	<div ng-repeat="band in bands" class="row" ng-click="playAudio(this)">
+	<div ng-repeat="band in bands" class="row band-container" ng-click="playAudio(this)">
 		<!-- <div ng-click="playAudio(this)"> -->
-			<audio src="{{band.top_tracks[0].audio}}"></audio>
-				<div class="col-lg-3 offset-lg-1">
-					{{band.artist}}
+				<div class="col-lg-3" >
+					<span>{{band.artist}}</span><span class="flag-icon flag-icon-{{countriesCodes[band.country]}}" title="{{band.country}}"></span>
 				</div>
-				<div class="col-lg-3">
-					{{band.country}}
-				</div>
+
 		<!-- </div> -->
 			
-	<div>
+	</div>
 </div>	
