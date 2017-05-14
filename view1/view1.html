@@ -1,12 +1,23 @@
 <!-- <p>This is the partial for view 1.</p> -->
 <div class="container">
-	<div ng-repeat="band in bands" class="row band-container" ng-click="playAudio(this)">
-		<!-- <div ng-click="playAudio(this)"> -->
-				<div class="col-lg-3" >
-					<span>{{band.artist}}</span><span class="flag-icon flag-icon-{{countriesCodes[band.country]}}" title="{{band.country}}"></span>
+	<div ng-repeat="band in bands" class="row band-container" >
+				<div class="col-lg-5">
+					<span>{{band.artist}}</span>
+					<span class="flag-icon flag-icon-{{countriesCodes[band.country]}}" title="{{band.country}}"></span>
+					<span ng-show ="{{band.top_tracks.length>0}}" class="audio-controls" ng-model="isPlaying" ng-init="isPlaying = false">
+						<ng-md-icon icon="fast_rewind" ng-click="rewindAndPlay(band)"></ng-md-icon>
+						<span ng-click="toggleAudio(band)">
+							<ng-md-icon icon="play_arrow" ng-hide = "band.isPlaying"></ng-md-icon>
+							<ng-md-icon icon="stop" ng-show= "band.isPlaying"></ng-md-icon>
+						</span>
+						<ng-md-icon icon="fast_forward" ng-click="forwardAndPlay(band)"></ng-md-icon>
+						<span ng-show= "band.isPlaying" class = "song-name"> 
+							<i>
+							{{band.top_tracks[band.currentTrack].track}}
+							</i>
+						</span>
+					</span>
 				</div>
-
-		<!-- </div> -->
 			
 	</div>
 </div>	
