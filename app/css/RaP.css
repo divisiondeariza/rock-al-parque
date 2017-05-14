@@ -206,3 +206,7 @@ header.masthead {
 .audio-controls{
   left:15px;
 }
+
+.song-name{
+  color:blue;
+}
