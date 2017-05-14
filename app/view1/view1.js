@@ -16,4 +16,15 @@ angular.module('myApp.view1', ['ngRoute'])
 				$scope.bands = data;
 			} );
 
+	$scope.audio = null;
+	$scope.playAudio = function(element){
+		console.log("started");
+		var url = element.band.top_tracks[0].audio;
+		if($scope.audio) $scope.audio.pause();
+		$scope.audio = new Audio(url)
+		console.log("got Audio");
+		$scope.audio.play();
+		console.log("end");
+	}
+
 }]);
