@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>La historia de Rock Al Parque</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -85,9 +85,11 @@
     <section id="sectionViz">
         <div class="container">
             <h2 class="text-center">Bandas Por País</h2>
+            <h6 class = "author">Por <a href="https://twitter.com/divisiondeariza">@divisiondeariza</a></h6>
             <hr class="star-primary">
             <div class="row">
-              <p>Estas son las bandas que se han presentado en Rock al Parque desde su creación hasta el día de hoy, discriminadas por país.</p>
+              <p>Estas son las bandas que se han presentado en Rock al Parque desde su creación hasta el día de hoy, discriminadas por país. También es posible escuchar un preview de las canciones más populares de cada banda según spótify (de las que se encuentran en spotify, claro está)</p>
+              <p>La lista la obtuve de <a href="https://es.wikipedia.org/wiki/Rock_al_Parque">la entrada de wikipedia de rock al parque</a></p>
 
 
                   <div ng-view></div>
@@ -123,10 +125,13 @@
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+
+
+
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
-  
+
   <!-- angular material -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
 
