@@ -194,7 +194,15 @@ header.masthead {
 }
 
 #sectionViz span{
-  left: 5px;
+  margin-left: 5px;
 
 }
 /************ Da Viz **************************/
+
+.playable{
+  color:blue;
+}
+
+.audio-controls{
+  left:15px;
+}

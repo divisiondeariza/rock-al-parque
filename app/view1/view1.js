@@ -17,13 +17,19 @@ angular.module('myApp.view1', ['ngRoute'])
 			} );
 
 	d3.csv("data/countriesCodes.csv",function(data){
-		console.log(data[0])
 		$scope.countriesCodes = data[0];
 	});
 
+
+
 	$scope.audio = null;
-	$scope.playAudio = function(element){
-		var url = element.band.top_tracks[0].audio;
+
+	$scope.toggleAudio = function(track, isPlaying){
+
+	}
+
+	$scope.playAudio = function(track,isPlaying){
+		var url = track.audio;
 		if($scope.audio) $scope.audio.pause();
 		$scope.audio = new Audio(url)
 		$scope.audio.play();
