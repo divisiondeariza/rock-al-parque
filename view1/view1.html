@@ -1,15 +1,10 @@
 <!-- <p>This is the partial for view 1.</p> -->
 <div class="container">
 	<div class="row">
-	<div ng-repeat="band in bands| orderBy: '-tracks'" class="band-container col-md-3" >
+	<div ng-repeat="band in bands| orderBy: ['-tracks', '-popularity', 'artist']" class="band-container col-md-3" >
 				<div >
 					<div>
-						<span class="band-name">{{band.artist}}</span>								
-						<span ng-show= "band.isPlaying" class = "song-name"> 
-									<i>
-									{{band.tracks[band.currentTrack].track}}
-									</i>
-						</span>
+						<span class="band-name">{{band.artist}}</span>							
 						
 					</div>
 					<!-- <span class="flag-icon flag-icon-{{countriesCodes[band.country]}}" title="{{band.country}}"></span> -->
@@ -23,7 +18,21 @@
 
 					</div>
 				</div>
-				<div class="cover" ng-show= "band.isPlaying">
+				<div class="cover" ng-show= "band.isPlaying">				
+
+						<div>
+							<span ng-show= "band.isPlaying" class = "song-name"> 
+								<i>
+									{{band.tracks[band.currentTrack].track}}
+								</i>	
+							</span>
+						</div>
+						<div>
+							<span>
+								Se presentó en:
+							</span>
+							<div ng-repeat="year in band['years']">{{year}}</div>
+						</div>
 					<img ng-src="{{band.tracks[band.currentTrack].cover}}">
 
 				</div>
