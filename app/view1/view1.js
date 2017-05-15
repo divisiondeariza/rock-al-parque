@@ -11,7 +11,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', ["$http", "$scope", function($http, $scope) {
 
-	$http.get("data/bandsByCountry.json")
+	$http.get("data/bands.json")
 			.success(function(data, status, headers, config){
 				$scope.bands = data;
 
