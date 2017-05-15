@@ -30,13 +30,13 @@ angular.module('myApp.view1', ['ngRoute'])
 	$scope.audio = null;
 
 	$scope.forwardAndPlay=function(band){
-		band.currentTrack = (band.currentTrack + 1) % band.top_tracks.length;
+		band.currentTrack = (band.currentTrack + 1) % band.tracks.length;
 		$scope.playAudio(band);
 	}
 
 
 	$scope.rewindAndPlay=function(band){
-		band.currentTrack = (band.currentTrack - 1 + band.top_tracks.length) % band.top_tracks.length;
+		band.currentTrack = (band.currentTrack - 1 + band.tracks.length) % band.tracks.length;
 		$scope.playAudio(band);
 	}
 
@@ -52,14 +52,14 @@ angular.module('myApp.view1', ['ngRoute'])
 
 	$scope.playAudio = function(band){
 		band.isPlaying = true;
-		var track = band.top_tracks[band.currentTrack]
+		var track = band.tracks[band.currentTrack]
 		var url = track.audio;
 		if($scope.audio) $scope.audio.pause();
 		$scope.audio = new Audio(url)
 		$scope.audio.addEventListener('ended', function(){
 			$scope.$apply(function () {
 				band.isPlaying = false;
-				band.currentTrack = (band.currentTrack + 1) % band.top_tracks.length;
+				band.currentTrack = (band.currentTrack + 1) % band.tracks.length;
 				}
 			);
 		});

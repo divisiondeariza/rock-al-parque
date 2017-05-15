@@ -226,3 +226,12 @@ header.masthead {
 .band-container{
   margin-bottom: 20px;
 }
+
+.band-name{
+  
+  text-transform: capitalize;
+}
+
+.cover img {
+  max-width:100%;
+}
