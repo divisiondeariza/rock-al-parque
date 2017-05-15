@@ -21,9 +21,9 @@ angular.module('myApp.view1', ['ngRoute'])
 				})
 			} );
 
-	d3.csv("data/countriesCodes.csv",function(data){
-		$scope.countriesCodes = data[0];
-	});
+	// d3.csv("data/countriesCodes.csv",function(data){
+	// 	$scope.countriesCodes = data[0];
+	// });
 
 
 

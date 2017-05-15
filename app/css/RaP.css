@@ -211,8 +211,18 @@ header.masthead {
 
 .audio-controls{
   left:15px;
-}
+  left: 15px;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 10px;
+  display: table-cell;
+  vertical-align: middle;
+  }
 
 .song-name{
   color:blue;
+}
+
+.band-container{
+  margin-bottom: 20px;
 }
