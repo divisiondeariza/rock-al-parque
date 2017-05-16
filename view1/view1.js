@@ -65,7 +65,7 @@ angular.module('myApp.view1', ['ngRoute'])
 		var url = track.audio;
 		if($scope.audio) $scope.audio.pause();
 		$scope.audio = new Audio(url)
-		$scope.audio.autoplay = true;
+		$scope.audio.autoplay = true; 
 		$scope.audio.addEventListener('ended', function(){
 			$scope.$apply(function () {
 				band.isPlaying = false;
