@@ -47,21 +47,6 @@ angular.module('myApp.view1', ['ngRoute'])
 	}
 
 	$scope.playAudio = function(band){
-		if(band.tracks){
-			$scope.playLoadedAudio(band);
-		}else{
-			$http.get("data/tracks/" + band.id + ".json")
-				.success(function(data, status, headers, config){
-					band.tracks = data["tracks"];
-					console.log(band.tracks);
-					$scope.playLoadedAudio(band);	
-				});
-		}
-
-	}
-
-	$scope.playLoadedAudio = function(band){
-		// band.isPlaying = true;
 		var track = band.tracks[band.currentTrack]
 		var url = track.audio;
 		if($scope.audio) $scope.audio.pause();
