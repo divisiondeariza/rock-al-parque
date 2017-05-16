@@ -259,23 +259,17 @@ header.masthead {
 
 .cover{
     max-width:100%;
+    border-radius: 10%;
  }
 
 @media (max-width: 768px) {
   .cover{
     max-width:30%;
-    border-radius: 10px;
     margin-top: 2px;
     margin-left: 6px;
   }
 }
 
-.cover-thumb{
-  max-width:30%;
-  border-radius: 10px;
-  margin-top: 2px;
-  margin-left: 6px;
-}
 
 .footer-text p{
   font-size: 1rem;

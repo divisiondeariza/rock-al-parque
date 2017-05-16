@@ -38,7 +38,7 @@
 								</span>
 							</div>
 						</div>
-					<img  ng-class="band.isPlaying? 'cover': 'cover-thumb'" class="cover-thumb" ng-src="{{band.tracks[band.currentTrack].cover}}">
+					<img  class="cover" ng-show= "band.isPlaying"  ng-src="{{band.isPlaying?band.tracks[band.currentTrack].cover:''}}">
 
 				</div>
 			
