@@ -228,10 +228,15 @@ header.masthead {
 }
 
 .band-name{
-  
+  font-size: 1.2rem;
+  font-weight: 800;
   text-transform: capitalize;
 }
 
-.cover img {
+.cover{
   max-width:100%;
+}
+
+.cover-thumb{
+  max-width:30%;
 }
