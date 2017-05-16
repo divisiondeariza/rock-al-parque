@@ -1,21 +1,23 @@
 <!-- <p>This is the partial for view 1.</p> -->
 <div class="container">
 	<div class="row">
-	<div ng-repeat="band in bands| orderBy: ['-tracks', '-popularity', 'artist']" class="band-container col-md-3" >
+	<div ng-repeat="band in bands| orderBy: ['-popularity', '-tracks', 'artist']" class="band-container col-lg-3  col-md-4 col-sm-6 col-xs-12 text-center">
 				<div >
 					<div>
 						<span class="band-name">{{band.artist}}</span>							
 						
 					</div>
 					<!-- <span class="flag-icon flag-icon-{{countriesCodes[band.country]}}" title="{{band.country}}"></span> -->
-					<div ng-show ="{{band.tracks.length>0}}" class="audio-controls" ng-model="isPlaying" ng-init="isPlaying = false">
-								<ng-md-icon icon="fast_rewind" ng-click="rewindAndPlay(band)"></ng-md-icon>
-								<span ng-click="toggleAudio(band)">
-									<ng-md-icon icon="play_arrow" ng-hide = "band.isPlaying"></ng-md-icon>
-									<ng-md-icon icon="stop" ng-show= "band.isPlaying"></ng-md-icon>
-								</span>
-								<ng-md-icon icon="fast_forward" ng-click="forwardAndPlay(band)"></ng-md-icon>
+					<div class="audio-controls-container">
+						<div ng-show ="{{band.tracks.length>0}}" class="audio-controls" ng-model="isPlaying" ng-init="isPlaying = false">
+									<ng-md-icon icon="fast_rewind" ng-click="rewindAndPlay(band)"></ng-md-icon>
+									<span ng-click="toggleAudio(band)">
+										<ng-md-icon icon="play_arrow" ng-hide = "band.isPlaying"></ng-md-icon>
+										<ng-md-icon icon="stop" ng-show= "band.isPlaying"></ng-md-icon>
+									</span>
+									<ng-md-icon icon="fast_forward" ng-click="forwardAndPlay(band)"></ng-md-icon>
 
+						</div>
 					</div>
 				</div>
 				<div>
