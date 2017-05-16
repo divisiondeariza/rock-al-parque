@@ -1,7 +1,7 @@
 <!-- <p>This is the partial for view 1.</p> -->
 <div class="container">
 	<div class="row">
-	<div ng-repeat="band in bands| orderBy: ['-popularity', '-tracks', 'artist']" class="band-container col-lg-3  col-md-4 col-sm-6 col-xs-12 text-center">
+	<div ng-repeat="band in bands| orderBy: ['-popularity', 'artist']" class="band-container col-lg-3  col-md-4 col-sm-6 col-xs-12 text-center">
 				<div >
 					<div>
 						<span class="band-name">{{band.artist}}</span>							
@@ -9,7 +9,7 @@
 					</div>
 					<!-- <span class="flag-icon flag-icon-{{countriesCodes[band.country]}}" title="{{band.country}}"></span> -->
 					<div class="audio-controls-container">
-						<div ng-show ="{{band.tracks.length>0}}" class="audio-controls" ng-model="isPlaying" ng-init="isPlaying = false">
+						<div ng-hide ="{{!band.id}}" class="audio-controls" ng-model="isPlaying" ng-init="isPlaying = false">
 									<ng-md-icon icon="fast_rewind" ng-click="rewindAndPlay(band)"></ng-md-icon>
 									<span ng-click="toggleAudio(band)">
 										<ng-md-icon icon="play_arrow" ng-hide = "band.isPlaying"></ng-md-icon>
@@ -28,7 +28,7 @@
 								</i>	
 							</span>
 						</div>
-						<div ng-show= "band.isPlaying || band.tracks.length == 0" >
+						<div ng-show= "band.isPlaying || !band.id" >
 							<span>
 								Se presentó en:
 							</span>
@@ -38,7 +38,7 @@
 								</span>
 							</div>
 						</div>
-					<img  class="cover" ng-show= "band.isPlaying"  ng-src="{{band.isPlaying?band.tracks[band.currentTrack].cover:''}}">
+					<img  class="cover" ng-class="{'cover-thumb':!band.isPlaying}"  ng-src="{{band.isPlaying?band.tracks[band.currentTrack].cover:band.thumb.url}}">
 
 				</div>
 			
