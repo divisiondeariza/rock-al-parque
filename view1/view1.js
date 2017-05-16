@@ -85,7 +85,7 @@ angular.module('myApp.view1', ['ngRoute'])
 				}
 			);
 		});
-		$scope.audio.play();
+		// $scope.audio.play();
 	}
 
 
