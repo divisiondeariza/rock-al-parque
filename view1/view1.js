@@ -53,7 +53,6 @@ angular.module('myApp.view1', ['ngRoute'])
 			$http.get("data/tracks/" + band.id + ".json")
 				.success(function(data, status, headers, config){
 					band.tracks = data["tracks"];
-					console.log(band.tracks);
 					$scope.playLoadedAudio(band);	
 				});
 		}
@@ -66,6 +65,7 @@ angular.module('myApp.view1', ['ngRoute'])
 		var url = track.audio;
 		if($scope.audio) $scope.audio.pause();
 		$scope.audio = new Audio(url)
+		$scope.audio.autoplay = true;
 		$scope.audio.addEventListener('ended', function(){
 			$scope.$apply(function () {
 				band.isPlaying = false;
